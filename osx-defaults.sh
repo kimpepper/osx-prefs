@@ -424,7 +424,7 @@ defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
 defaults write com.apple.terminal StringEncodings -array 4
 
 # Use a modified version of the Pro theme by default in Terminal.app
-open "Kim.terminal"
+open "$HOME/src/Terminal/Kim.terminal"
 sleep 1 # Wait a bit to make sure the theme is loaded
 defaults write com.apple.terminal "Default Window Settings" -string "Kim"
 defaults write com.apple.terminal "Startup Window Settings" -string "Kim"
