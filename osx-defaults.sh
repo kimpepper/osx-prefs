@@ -13,9 +13,9 @@ while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
 ###############################################################################
 
 # Set computer name (as done via System Preferences → Sharing)
-sudo scutil --set ComputerName "Alia"
-sudo scutil --set HostName "Alia"
-sudo scutil --set LocalHostName "alia"
+sudo scutil --set ComputerName "Leto"
+sudo scutil --set HostName "leto"
+sudo scutil --set LocalHostName "leto"
 sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "MathBook-Pro"
 
 # Menu bar: disable transparency
@@ -528,7 +528,13 @@ defaults write com.twitter.twitter-mac ESCClosesComposeWindow -bool true
 defaults write com.twitter.twitter-mac ShowFullNames -bool true
 
 # Hide the app in the background if it’s not the front-most window
-defaults write com.twitter.twitter-mac HideInBackground -bool true
+# defaults write com.twitter.twitter-mac HideInBackground -bool true
+
+###############################################################################
+# Alfred                                                                      #
+###############################################################################
+
+/usr/libexec/PlistBuddy -c "Set: appearance.themeuid alfred.theme.dark" ~/Library/Preferences/com.alfredapp.Alfred.plist
 
 ###############################################################################
 # Kill affected applications                                                  #
